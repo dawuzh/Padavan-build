@@ -35,16 +35,16 @@ jobs:
         KERNEL: 3.4
       run: |
         if [ $KERNEL = "4.4" ] ; then
-        git clone --depth=1 https://github.com/dawuzh/mt7620-rt5592epl/blob/master/trunk/configs/boards/MT7620RT5592/kernel-3.4.x.config
+        git clone --depth=1 https://github.com/dawuzh/mt7620-rt5592epl
         else
-        git clone --depth=1 https://github.com/dawuzh/mt7620-rt5592epl/blob/master/trunk/configs/boards/MT7620RT5592/kernel-3.4.x.config
+        git clone --depth=1 https://github.com/dawuzh/mt7620-rt5592epl
         fi
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: kernel-3.4.x
+        TNAME: MT7620RT5592
         KERNEL: 3.4
       run: |
         cd /opt/rt-n56u/trunk
